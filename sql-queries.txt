@@ -1,0 +1,65 @@
+
+//for category--->
+create table if not exists Category (
+ id bigint not null auto_increment primary key,
+ name varchar(50) not null);
+
+insert into Category(name) values ('ELECTRONICS');
+insert into Category(name) values ('HOME_APPLIANCES');
+insert into Category(name) values ('CLOTHING');
+insert into Category(name) values ('FURNITURE');
+
+select * from Category
+
+
+//for Charges---->
+create table if not exists Charges (
+ id SERIAL PRIMARY KEY,
+ category_id int not null,
+ gst varchar(50) not null,
+ delivery varchar(50) not null
+);
+
+
+alter table Charges add foreign key (category_id) references Category(id);
+  
+select * from Charges;
+ 
+insert into Charges(category_id, gst, delivery) values (1, 0.18, 350 );
+insert into Charges(category_id, gst, delivery) values (2, 0.24, 800);
+insert into Charges(category_id, gst, delivery) values (3, 0.12, 0);
+insert into Charges(category_id, gst, delivery) values (4, 0.18, 300);
+ 
+
+
+//for product table----->
+create table if not exists Product (
+ id SERIAL PRIMARY KEY,
+ name varchar(50) not null,
+ type varchar(50) not null,
+ category_id bigint not null,
+ base_price varchar(50) not null  ,
+ discount varchar(50) not null,
+ final_price varchar(50),
+ charges_id bigint
+);
+
+ALTER TABLE Product AUTO_INCREMENT=1001;
+
+alter table Product add foreign key (category_id) references Category(id);
+
+alter table Product add foreign key (charges_id) references Charges(id);
+
+insert into Product(name, productType, category_id, base_price, discount, final_price, charges_id) values 
+('Lenovo Yoga', '0', '1', 45000, 0.15, 0, 2 );
+insert into Product(name, productType, category_id, base_price, discount, final_price, charges_id) values 
+('LG Washing Machine', '1', '2', 25000, 0.22, 0,  3 );
+insert into Product(name, productType, category_id, base_price, discount, final_price, charges_id) values 
+('HP Pavillion 360', '0', '1', 60000, 0.15, 0, 2 );
+insert into Product(name, productType, category_id, base_price, discount, final_price, charges_id) values 
+('US Polo Assn', '2', '3', 1200, 0.4, 0, 4 );
+insert into Product(name, productType, category_id, base_price, discount, final_price, charges_id) values 
+('Neelkamal Been Bag', '3', '4', 350, 0.10, 0, 4 );
+
+
+select * from product
