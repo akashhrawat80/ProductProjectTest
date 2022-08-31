@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ProductprojectApplicationTests" project="productproject" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.productproject.ProductprojectApplicationTests" time="0.865" displayname="ProductprojectApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.productproject.ProductprojectApplicationTests]">
+    <testcase name="testRead" classname="com.productproject.ProductprojectApplicationTests" time="0.452" displayname="testRead()" uniqueid="[engine:junit-jupiter]/[class:com.productproject.ProductprojectApplicationTests]/[method:testRead()]"/>
+    <testcase name="testSingleProduct" classname="com.productproject.ProductprojectApplicationTests" time="0.026" displayname="testSingleProduct()" uniqueid="[engine:junit-jupiter]/[class:com.productproject.ProductprojectApplicationTests]/[method:testSingleProduct()]"/>
+    <testcase name="testReadAll" classname="com.productproject.ProductprojectApplicationTests" time="0.382" displayname="testReadAll()" uniqueid="[engine:junit-jupiter]/[class:com.productproject.ProductprojectApplicationTests]/[method:testReadAll()]"/>
+  </testsuite>
+</testrun>
